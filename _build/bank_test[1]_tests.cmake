@@ -1,0 +1,5 @@
+add_test( Banking.Account1 /Users/theblindpew/Lab05_TIMP/_build/bank_test [==[--gtest_filter=Banking.Account1]==] --gtest_also_run_disabled_tests)
+set_tests_properties( Banking.Account1 PROPERTIES WORKING_DIRECTORY /Users/theblindpew/Lab05_TIMP/_build SKIP_REGULAR_EXPRESSION [==[\[  SKIPPED \]]==])
+add_test( Banking.Account2 /Users/theblindpew/Lab05_TIMP/_build/bank_test [==[--gtest_filter=Banking.Account2]==] --gtest_also_run_disabled_tests)
+set_tests_properties( Banking.Account2 PROPERTIES WORKING_DIRECTORY /Users/theblindpew/Lab05_TIMP/_build SKIP_REGULAR_EXPRESSION [==[\[  SKIPPED \]]==])
+set( bank_test_TESTS Banking.Account1 Banking.Account2)
