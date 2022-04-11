@@ -4,38 +4,66 @@
 #include <Transaction.h>
 
 
-TEST(Banking, Account1)
+TEST(Account, Exceptions)
 {
 	Account a1(1, 1000);
-	EXPECT_EQ(a1.GetBalance(), 1000);
-}
-
-TEST(Banking, Account2)
-{
-	Account a1(1, 1000);
+    EXPECT_ANY_THROW(a1.ChangeBalance(1));
 	a1.Lock();
-	a1.ChangeBalance(1);
+    EXPECT_ANY_THROW(a1.Lock());
+    a1.ChangeBalance(1);
 	a1.Unlock();
 	int balance = a1.GetBalance();
 	EXPECT_EQ(balance, 1001);
 }
 
-/*class MockAccount: public Account {
-	public:
-		MOCK_METHOD0(GetBalance, int());
-		MOCK_METHOD1(ChangeBalance, void(int));
+class MockAccount: public Account {
+public:
+    MockAccount(int id, int balance)
+        : Account(id, balance) {}
+    //~MockAccount(){}
+    MOCK_METHOD0(GetBalance, int());
+    MOCK_METHOD1(ChangeBalance, void(int));
+    MOCK_METHOD0(Lock, void());
+    MOCK_METHOD0(Unlock, void());
 };
 
-TEST(Banking, Transaction)
+TEST(Account, MockAcc)
 {
-	MockAccount account;
-	EXPECT_CALL(account, ChangeBalance(1)).Times(::testing::AtLeast(1));
-	Transaction t1;
-	t1.Credit(account, 1);
+	MockAccount account1(5, 7000);
+	EXPECT_CALL(account1, ChangeBalance(1)).Times(1);
+    EXPECT_CALL(account1, Lock()).Times(1);
+    EXPECT_CALL(account1, Unlock()).Times(1);
+    EXPECT_CALL(account1, GetBalance()).Times(1).WillOnce(testing::Return(7000));
+    account1.Lock();
+    account1.ChangeBalance(1);
+    account1.Unlock();
+    account1.GetBalance();
+                
+}
+
+TEST(Transaction, WithMock) {
+    MockAccount account1(5, 7000);
+    MockAccount account2(6, 20000);
+    
+//    EXPECT_CALL(account1, ChangeBalance(2000)).Times(1);
+    EXPECT_CALL(account1, Lock()).Times(1);
+    EXPECT_CALL(account1, Unlock()).Times(1);
+//    EXPECT_CALL(account1, GetBalance()).Times(1);
+    
+    EXPECT_CALL(account2, ChangeBalance(2000)).Times(testing::AnyNumber());
+    EXPECT_CALL(account2, Lock()).Times(1);
+    EXPECT_CALL(account2, Unlock()).Times(1);
+//    EXPECT_CALL(account2, GetBalance()).Times(1);
+    
+    Transaction tr;
+    tr.set_fee(100);
+    EXPECT_EQ(tr.fee(), 100);
+    tr.Make(account1, account2, 2000);
+    //tr.SaveToDataBase(account1, account2, 2000);
 }
 
 int main(int argc, char *argv[])
 {
 	::testing::InitGoogleTest(&argc, argv);
 	return RUN_ALL_TESTS();
-}*/
+}

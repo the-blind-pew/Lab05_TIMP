@@ -187,12 +187,12 @@ CMakeFiles/transaction.dir/clean:
 # Target rules for target CMakeFiles/bank_test.dir
 
 # All Build rule for target.
-CMakeFiles/bank_test.dir/all: CMakeFiles/transaction.dir/all
 CMakeFiles/bank_test.dir/all: CMakeFiles/account.dir/all
 CMakeFiles/bank_test.dir/all: _deps/googletest-build/googlemock/CMakeFiles/gmock.dir/all
 CMakeFiles/bank_test.dir/all: _deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/all
 CMakeFiles/bank_test.dir/all: _deps/googletest-build/googletest/CMakeFiles/gtest.dir/all
 CMakeFiles/bank_test.dir/all: _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/all
+CMakeFiles/bank_test.dir/all: CMakeFiles/transaction.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/bank_test.dir/build.make CMakeFiles/bank_test.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/bank_test.dir/build.make CMakeFiles/bank_test.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/theblindpew/Lab05_TIMP/_build/CMakeFiles --progress-num=3,4 "Built target bank_test"

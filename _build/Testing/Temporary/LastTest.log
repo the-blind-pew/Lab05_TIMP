@@ -1,0 +1,99 @@
+Start testing: Apr 12 02:16 MSK
+----------------------------------------------------------
+1/3 Testing: Account.Exceptions
+1/3 Test: Account.Exceptions
+Command: "/Users/theblindpew/Lab05_TIMP/_build/bank_test" "--gtest_filter=Account.Exceptions" "--gtest_also_run_disabled_tests"
+Directory: /Users/theblindpew/Lab05_TIMP/_build
+"Account.Exceptions" start time: Apr 12 02:16 MSK
+Output:
+----------------------------------------------------------
+Note: Google Test filter = Account.Exceptions
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from Account
+[ RUN      ] Account.Exceptions
+[       OK ] Account.Exceptions (0 ms)
+[----------] 1 test from Account (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"Account.Exceptions" end time: Apr 12 02:16 MSK
+"Account.Exceptions" time elapsed: 00:00:00
+----------------------------------------------------------
+
+2/3 Testing: Account.MockAcc
+2/3 Test: Account.MockAcc
+Command: "/Users/theblindpew/Lab05_TIMP/_build/bank_test" "--gtest_filter=Account.MockAcc" "--gtest_also_run_disabled_tests"
+Directory: /Users/theblindpew/Lab05_TIMP/_build
+"Account.MockAcc" start time: Apr 12 02:16 MSK
+Output:
+----------------------------------------------------------
+Note: Google Test filter = Account.MockAcc
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from Account
+[ RUN      ] Account.MockAcc
+[       OK ] Account.MockAcc (0 ms)
+[----------] 1 test from Account (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"Account.MockAcc" end time: Apr 12 02:16 MSK
+"Account.MockAcc" time elapsed: 00:00:00
+----------------------------------------------------------
+
+3/3 Testing: Transaction.WithMock
+3/3 Test: Transaction.WithMock
+Command: "/Users/theblindpew/Lab05_TIMP/_build/bank_test" "--gtest_filter=Transaction.WithMock" "--gtest_also_run_disabled_tests"
+Directory: /Users/theblindpew/Lab05_TIMP/_build
+"Transaction.WithMock" start time: Apr 12 02:16 MSK
+Output:
+----------------------------------------------------------
+Note: Google Test filter = Transaction.WithMock
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from Transaction
+[ RUN      ] Transaction.WithMock
+unknown file: Failure
+
+Unexpected mock function call - returning directly.
+    Function call: ChangeBalance(-2100)
+Google Mock tried the following 1 expectation, but it didn't match:
+
+/Users/theblindpew/Lab05_TIMP/tests/test.cpp:53: EXPECT_CALL(account2, ChangeBalance(2000))...
+  Expected arg #0: is equal to 2000
+           Actual: -2100
+         Expected: to be called any number of times
+           Actual: called once - satisfied and active
+5 send to 6 $2000
+Balance 5 is 7000
+Balance 6 is 20000
+[  FAILED  ] Transaction.WithMock (0 ms)
+[----------] 1 test from Transaction (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 0 tests.
+[  FAILED  ] 1 test, listed below:
+[  FAILED  ] Transaction.WithMock
+
+ 1 FAILED TEST
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Failed.
+"Transaction.WithMock" end time: Apr 12 02:16 MSK
+"Transaction.WithMock" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Apr 12 02:16 MSK
