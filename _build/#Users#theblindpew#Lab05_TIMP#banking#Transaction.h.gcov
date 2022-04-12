@@ -1,0 +1,27 @@
+        -:    0:Source:/Users/theblindpew/Lab05_TIMP/banking/Transaction.h
+        -:    0:Graph:/Users/theblindpew/Lab05_TIMP/_build/CMakeFiles/bank_tests.dir/tests/test.cpp.gcno
+        -:    0:Data:/Users/theblindpew/Lab05_TIMP/_build/CMakeFiles/bank_tests.dir/tests/test.cpp.gcda
+        -:    0:Runs:38
+        -:    0:Programs:1
+        -:    1:#pragma once
+        -:    2:
+        -:    3:class Account;
+        -:    4:
+        -:    5:class Transaction {
+        -:    6: public:
+        -:    7:  Transaction();
+        -:    8:  virtual ~Transaction();
+        -:    9:
+        -:   10:  bool Make(Account& from, Account& to, int sum);
+        9:   11:  int fee() const { return fee_; }
+       18:   12:  void set_fee(int fee) { fee_ = fee; }
+        -:   13:
+        -:   14: private:
+        -:   15:  void Credit(Account& accout, int sum);
+        -:   16:  bool Debit(Account& accout, int sum);
+        -:   17:
+        -:   18:  // Virtual to test.
+        -:   19:  virtual void SaveToDataBase(Account& from, Account& to, int sum);
+        -:   20:
+        -:   21:  int fee_;
+        -:   22:};

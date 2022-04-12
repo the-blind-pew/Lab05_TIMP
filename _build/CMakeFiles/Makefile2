@@ -65,7 +65,7 @@ CMAKE_BINARY_DIR = /Users/theblindpew/Lab05_TIMP/_build
 # The main recursive "all" target.
 all: CMakeFiles/account.dir/all
 all: CMakeFiles/transaction.dir/all
-all: CMakeFiles/bank_test.dir/all
+all: CMakeFiles/bank_tests.dir/all
 all: _deps/googletest-build/all
 .PHONY : all
 
@@ -76,7 +76,7 @@ preinstall: _deps/googletest-build/preinstall
 # The main recursive "clean" target.
 clean: CMakeFiles/account.dir/clean
 clean: CMakeFiles/transaction.dir/clean
-clean: CMakeFiles/bank_test.dir/clean
+clean: CMakeFiles/bank_tests.dir/clean
 clean: _deps/googletest-build/clean
 .PHONY : clean
 
@@ -184,35 +184,35 @@ CMakeFiles/transaction.dir/clean:
 .PHONY : CMakeFiles/transaction.dir/clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/bank_test.dir
+# Target rules for target CMakeFiles/bank_tests.dir
 
 # All Build rule for target.
-CMakeFiles/bank_test.dir/all: CMakeFiles/account.dir/all
-CMakeFiles/bank_test.dir/all: _deps/googletest-build/googlemock/CMakeFiles/gmock.dir/all
-CMakeFiles/bank_test.dir/all: _deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/all
-CMakeFiles/bank_test.dir/all: _deps/googletest-build/googletest/CMakeFiles/gtest.dir/all
-CMakeFiles/bank_test.dir/all: _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/all
-CMakeFiles/bank_test.dir/all: CMakeFiles/transaction.dir/all
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/bank_test.dir/build.make CMakeFiles/bank_test.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/bank_test.dir/build.make CMakeFiles/bank_test.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/theblindpew/Lab05_TIMP/_build/CMakeFiles --progress-num=3,4 "Built target bank_test"
-.PHONY : CMakeFiles/bank_test.dir/all
+CMakeFiles/bank_tests.dir/all: CMakeFiles/account.dir/all
+CMakeFiles/bank_tests.dir/all: CMakeFiles/transaction.dir/all
+CMakeFiles/bank_tests.dir/all: _deps/googletest-build/googlemock/CMakeFiles/gmock.dir/all
+CMakeFiles/bank_tests.dir/all: _deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/all
+CMakeFiles/bank_tests.dir/all: _deps/googletest-build/googletest/CMakeFiles/gtest.dir/all
+CMakeFiles/bank_tests.dir/all: _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bank_tests.dir/build.make CMakeFiles/bank_tests.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bank_tests.dir/build.make CMakeFiles/bank_tests.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/theblindpew/Lab05_TIMP/_build/CMakeFiles --progress-num=3,4 "Built target bank_tests"
+.PHONY : CMakeFiles/bank_tests.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/bank_test.dir/rule: cmake_check_build_system
+CMakeFiles/bank_tests.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/theblindpew/Lab05_TIMP/_build/CMakeFiles 14
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/bank_test.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/bank_tests.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/theblindpew/Lab05_TIMP/_build/CMakeFiles 0
-.PHONY : CMakeFiles/bank_test.dir/rule
+.PHONY : CMakeFiles/bank_tests.dir/rule
 
 # Convenience name for target.
-bank_test: CMakeFiles/bank_test.dir/rule
-.PHONY : bank_test
+bank_tests: CMakeFiles/bank_tests.dir/rule
+.PHONY : bank_tests
 
 # clean rule for target.
-CMakeFiles/bank_test.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/bank_test.dir/build.make CMakeFiles/bank_test.dir/clean
-.PHONY : CMakeFiles/bank_test.dir/clean
+CMakeFiles/bank_tests.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bank_tests.dir/build.make CMakeFiles/bank_tests.dir/clean
+.PHONY : CMakeFiles/bank_tests.dir/clean
 
 #=============================================================================
 # Target rules for target _deps/googletest-build/googlemock/CMakeFiles/gmock.dir

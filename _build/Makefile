@@ -198,17 +198,17 @@ transaction/fast:
 .PHONY : transaction/fast
 
 #=============================================================================
-# Target rules for targets named bank_test
+# Target rules for targets named bank_tests
 
 # Build rule for target.
-bank_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 bank_test
-.PHONY : bank_test
+bank_tests: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 bank_tests
+.PHONY : bank_tests
 
 # fast build rule for target.
-bank_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/bank_test.dir/build.make CMakeFiles/bank_test.dir/build
-.PHONY : bank_test/fast
+bank_tests/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bank_tests.dir/build.make CMakeFiles/bank_tests.dir/build
+.PHONY : bank_tests/fast
 
 #=============================================================================
 # Target rules for targets named gmock
@@ -315,7 +315,7 @@ tests/test.o: tests/test.cpp.o
 
 # target to build an object file
 tests/test.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/bank_test.dir/build.make CMakeFiles/bank_test.dir/tests/test.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bank_tests.dir/build.make CMakeFiles/bank_tests.dir/tests/test.cpp.o
 .PHONY : tests/test.cpp.o
 
 tests/test.i: tests/test.cpp.i
@@ -323,7 +323,7 @@ tests/test.i: tests/test.cpp.i
 
 # target to preprocess a source file
 tests/test.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/bank_test.dir/build.make CMakeFiles/bank_test.dir/tests/test.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bank_tests.dir/build.make CMakeFiles/bank_tests.dir/tests/test.cpp.i
 .PHONY : tests/test.cpp.i
 
 tests/test.s: tests/test.cpp.s
@@ -331,7 +331,7 @@ tests/test.s: tests/test.cpp.s
 
 # target to generate assembly for a file
 tests/test.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/bank_test.dir/build.make CMakeFiles/bank_test.dir/tests/test.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bank_tests.dir/build.make CMakeFiles/bank_tests.dir/tests/test.cpp.s
 .PHONY : tests/test.cpp.s
 
 # Help Target
@@ -348,7 +348,7 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... test"
 	@echo "... account"
-	@echo "... bank_test"
+	@echo "... bank_tests"
 	@echo "... gmock"
 	@echo "... gmock_main"
 	@echo "... gtest"

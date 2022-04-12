@@ -4,4 +4,6 @@ add_test( Account.MockAcc /Users/theblindpew/Lab05_TIMP/_build/bank_test [==[--g
 set_tests_properties( Account.MockAcc PROPERTIES WORKING_DIRECTORY /Users/theblindpew/Lab05_TIMP/_build SKIP_REGULAR_EXPRESSION [==[\[  SKIPPED \]]==])
 add_test( Transaction.WithMock /Users/theblindpew/Lab05_TIMP/_build/bank_test [==[--gtest_filter=Transaction.WithMock]==] --gtest_also_run_disabled_tests)
 set_tests_properties( Transaction.WithMock PROPERTIES WORKING_DIRECTORY /Users/theblindpew/Lab05_TIMP/_build SKIP_REGULAR_EXPRESSION [==[\[  SKIPPED \]]==])
-set( bank_test_TESTS Account.Exceptions Account.MockAcc Transaction.WithMock)
+add_test( Transaction.Exceptions /Users/theblindpew/Lab05_TIMP/_build/bank_test [==[--gtest_filter=Transaction.Exceptions]==] --gtest_also_run_disabled_tests)
+set_tests_properties( Transaction.Exceptions PROPERTIES WORKING_DIRECTORY /Users/theblindpew/Lab05_TIMP/_build SKIP_REGULAR_EXPRESSION [==[\[  SKIPPED \]]==])
+set( bank_test_TESTS Account.Exceptions Account.MockAcc Transaction.WithMock Transaction.Exceptions)

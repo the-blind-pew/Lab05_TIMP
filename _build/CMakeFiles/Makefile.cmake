@@ -85,7 +85,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
 set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/account.dir/DependInfo.cmake"
   "CMakeFiles/transaction.dir/DependInfo.cmake"
-  "CMakeFiles/bank_test.dir/DependInfo.cmake"
+  "CMakeFiles/bank_tests.dir/DependInfo.cmake"
   "_deps/googletest-build/googlemock/CMakeFiles/gmock.dir/DependInfo.cmake"
   "_deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/DependInfo.cmake"
   "_deps/googletest-build/googletest/CMakeFiles/gtest.dir/DependInfo.cmake"

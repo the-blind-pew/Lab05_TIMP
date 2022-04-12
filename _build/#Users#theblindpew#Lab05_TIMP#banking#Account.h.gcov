@@ -1,0 +1,29 @@
+        -:    0:Source:/Users/theblindpew/Lab05_TIMP/banking/Account.h
+        -:    0:Graph:/Users/theblindpew/Lab05_TIMP/_build/CMakeFiles/transaction.dir/banking/Transaction.cpp.gcno
+        -:    0:Data:/Users/theblindpew/Lab05_TIMP/_build/CMakeFiles/transaction.dir/banking/Transaction.cpp.gcda
+        -:    0:Runs:1
+        -:    0:Programs:1
+        -:    1:#pragma once
+        -:    2:class Account {
+        -:    3: public:
+        -:    4:  Account(int id, int balance);
+        -:    5:  virtual ~Account();
+        -:    6:
+        -:    7:  // Virtual to test.
+        -:    8:  virtual int GetBalance() const;
+        -:    9:
+        -:   10:  // Virtual to test.
+        -:   11:  virtual void ChangeBalance(int diff);
+        -:   12:
+        -:   13:  // Virtual to test.
+        -:   14:  virtual void Lock();
+        -:   15:
+        -:   16:  // Virtual to test.
+        -:   17:  virtual void Unlock();
+      108:   18:  int id() const { return id_; }
+        -:   19:
+        -:   20: private:
+        -:   21:  int id_;
+        -:   22:  int balance_;
+        -:   23:  bool is_locked_;
+        -:   24:};

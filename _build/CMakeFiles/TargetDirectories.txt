@@ -1,6 +1,6 @@
 /Users/theblindpew/Lab05_TIMP/_build/CMakeFiles/account.dir
 /Users/theblindpew/Lab05_TIMP/_build/CMakeFiles/transaction.dir
-/Users/theblindpew/Lab05_TIMP/_build/CMakeFiles/bank_test.dir
+/Users/theblindpew/Lab05_TIMP/_build/CMakeFiles/bank_tests.dir
 /Users/theblindpew/Lab05_TIMP/_build/CMakeFiles/test.dir
 /Users/theblindpew/Lab05_TIMP/_build/CMakeFiles/edit_cache.dir
 /Users/theblindpew/Lab05_TIMP/_build/CMakeFiles/rebuild_cache.dir

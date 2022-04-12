@@ -308,3 +308,16 @@ int main(void)
   return 0;
 }
 
+Performing C SOURCE FILE Test COVERAGE_FLAG_DETECTED succeeded with the following output:
+Change Dir: /Users/theblindpew/Lab05_TIMP/_build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_556c9/fast && /Applications/Xcode.app/Contents/Developer/usr/bin/make  -f CMakeFiles/cmTC_556c9.dir/build.make CMakeFiles/cmTC_556c9.dir/build
+Building C object CMakeFiles/cmTC_556c9.dir/src.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc -DCOVERAGE_FLAG_DETECTED  -O0 -g -fprofile-arcs -ftest-coverage -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk   -O0 -g -fprofile-arcs -ftest-coverage -MD -MT CMakeFiles/cmTC_556c9.dir/src.c.o -MF CMakeFiles/cmTC_556c9.dir/src.c.o.d -o CMakeFiles/cmTC_556c9.dir/src.c.o -c /Users/theblindpew/Lab05_TIMP/_build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_556c9
+/Applications/CMake.app/Contents/bin/cmake -E cmake_link_script CMakeFiles/cmTC_556c9.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -O0 -g -fprofile-arcs -ftest-coverage -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_556c9.dir/src.c.o -o cmTC_556c9 
+
+
+Source file was:
+int main(void) { return 0; }

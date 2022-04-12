@@ -14,6 +14,9 @@
 # EXTERNAL cache entries
 ########################
 
+//Build code coverage
+BUILD_COVERAGE:BOOL=ON
+
 //Builds the googlemock subproject
 BUILD_GMOCK:BOOL=ON
 
@@ -276,6 +279,15 @@ CMAKE_STRIP:FILEPATH=/Applications/Xcode.app/Contents/Developer/Toolchains/Xcode
 // Studio IDE projects all commands are done without /nologo.
 CMAKE_VERBOSE_MAKEFILE:BOOL=FALSE
 
+//AppleClang flags for code coverage.
+COVERAGE_AppleClang_FLAGS:STRING=-O0 -g -fprofile-arcs -ftest-coverage
+
+//Path to a program.
+CPPFILT_BIN:FILEPATH=/usr/bin/c++filt
+
+//Enable coverage build.
+ENABLE_COVERAGE:BOOL=ON
+
 //Directory under which to collect all populated content
 FETCHCONTENT_BASE_DIR:PATH=/Users/theblindpew/Lab05_TIMP/_build/_deps
 
@@ -296,9 +308,30 @@ FETCHCONTENT_UPDATES_DISCONNECTED:BOOL=OFF
 //Enables UPDATE_DISCONNECTED behavior just for population of googletest
 FETCHCONTENT_UPDATES_DISCONNECTED_GOOGLETEST:BOOL=OFF
 
+//C gcov binary.
+GCOV_AppleClang_BIN:STRING=/Users/theblindpew/Lab05_TIMP/Coverage_for_host/cmake/llvm-cov-wrapper
+
+//Environment variables for llvm-cov-wrapper.
+GCOV_AppleClang_ENV:STRING=LLVM_COV_BIN=/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/llvm-cov
+
+//Path to a program.
+GENHTML_BIN:FILEPATH=GENHTML_BIN-NOTFOUND
+
+//Path to a program.
+GENINFO_BIN:FILEPATH=GENINFO_BIN-NOTFOUND
+
 //Enable installation of googletest. (Projects embedding googletest
 // may want to turn this OFF.)
 INSTALL_GTEST:BOOL=ON
+
+//Path to a program.
+LCOV_BIN:FILEPATH=LCOV_BIN-NOTFOUND
+
+//Path to a program.
+LLVM_COV_BIN:FILEPATH=/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/llvm-cov
+
+//Path to a program.
+LLVM_COV_WRAPPER:FILEPATH=/Users/theblindpew/Lab05_TIMP/Coverage_for_host/cmake/llvm-cov-wrapper
 
 //Value Computed by CMake
 bank_test_BINARY_DIR:STATIC=/Users/theblindpew/Lab05_TIMP/_build
@@ -308,6 +341,9 @@ bank_test_IS_TOP_LEVEL:STATIC=ON
 
 //Value Computed by CMake
 bank_test_SOURCE_DIR:STATIC=/Users/theblindpew/Lab05_TIMP
+
+//The directory containing a CMake configuration file for codecov.
+codecov_DIR:PATH=codecov_DIR-NOTFOUND
 
 //Value Computed by CMake
 gmock_BINARY_DIR:STATIC=/Users/theblindpew/Lab05_TIMP/_build/_deps/googletest-build/googlemock
@@ -545,10 +581,18 @@ CMAKE_STRIP-ADVANCED:INTERNAL=1
 CMAKE_UNAME:INTERNAL=/usr/bin/uname
 //ADVANCED property for variable: CMAKE_VERBOSE_MAKEFILE
 CMAKE_VERBOSE_MAKEFILE-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: COVERAGE_AppleClang_FLAGS
+COVERAGE_AppleClang_FLAGS-ADVANCED:INTERNAL=1
+//Test COVERAGE_FLAG_DETECTED
+COVERAGE_FLAG_DETECTED:INTERNAL=1
 //Details about finding Python
 FIND_PACKAGE_MESSAGE_DETAILS_Python:INTERNAL=[/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.8/bin/python3.8][cfound components: Interpreter ][v3.8.2()]
 //Details about finding Threads
 FIND_PACKAGE_MESSAGE_DETAILS_Threads:INTERNAL=[TRUE][v()]
+//ADVANCED property for variable: GCOV_AppleClang_ENV
+GCOV_AppleClang_ENV-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: LLVM_COV_BIN
+LLVM_COV_BIN-ADVANCED:INTERNAL=1
 //CMAKE_INSTALL_PREFIX during last run
 _GNUInstallDirs_LAST_CMAKE_INSTALL_PREFIX:INTERNAL=/usr/local
 //Path to a program.
