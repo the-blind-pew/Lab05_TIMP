@@ -1,5 +1,0 @@
-if(EXISTS "/Users/theblindpew/Lab05_TIMP/_build/bank_test[1]_tests.cmake")
-  include("/Users/theblindpew/Lab05_TIMP/_build/bank_test[1]_tests.cmake")
-else()
-  add_test(bank_test_NOT_BUILT bank_test_NOT_BUILT)
-endif()
