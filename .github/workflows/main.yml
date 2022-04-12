@@ -43,7 +43,7 @@ jobs:
         version: 10.x
 
     - name: npm install
-      run: npm install
+      run: sudo apt install npm
 
     - name: Test 
       run: make test-coverage
