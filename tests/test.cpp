@@ -20,7 +20,6 @@ class MockAccount: public Account {
 public:
     MockAccount(int id, int balance)
         : Account(id, balance) {}
-    //~MockAccount(){}
     MOCK_METHOD0(GetBalance, int());
     MOCK_METHOD1(ChangeBalance, void(int));
     MOCK_METHOD0(Lock, void());
@@ -50,9 +49,9 @@ TEST(Transaction, WithMock) {
     EXPECT_CALL(account1, Unlock()).Times(1);
 //    EXPECT_CALL(account1, GetBalance()).Times(1);
     
-    EXPECT_CALL(account2, ChangeBalance(2000)).Times(testing::AnyNumber());
-    EXPECT_CALL(account2, Lock()).Times(1);
-    EXPECT_CALL(account2, Unlock()).Times(1);
+//    EXPECT_CALL(account2, ChangeBalance(2000)).Times(testing::AnyNumber());
+//    EXPECT_CALL(account2, Lock()).Times(1);
+//    EXPECT_CALL(account2, Unlock()).Times(1);
 //    EXPECT_CALL(account2, GetBalance()).Times(1);
     
     Transaction tr;
@@ -60,6 +59,17 @@ TEST(Transaction, WithMock) {
     EXPECT_EQ(tr.fee(), 100);
     tr.Make(account1, account2, 2000);
     //tr.SaveToDataBase(account1, account2, 2000);
+}
+
+TEST(Transaction, Exceptions) {
+    Account account1(5, 7000);
+    Account account2(6, 20000);
+    Transaction tr;
+    tr.set_fee(10);
+    EXPECT_ANY_THROW(tr.Make(account1, account1, 500));
+    EXPECT_ANY_THROW(tr.Make(account1, account2, 90));
+    EXPECT_ANY_THROW(tr.Make(account1, account2, 10));
+    EXPECT_ANY_THROW(tr.Make(account1, account2, 7100));
 }
 
 int main(int argc, char *argv[])

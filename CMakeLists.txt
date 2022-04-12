@@ -16,6 +16,8 @@ target_link_libraries(transaction account)
 
 option(BUILD_TESTS "Build test" OFF)
 
+option(BUILD_COVERAGE "Build code coverage" OFF)
+
 include(FetchContent)
 FetchContent_Declare(
   googletest
@@ -26,7 +28,8 @@ FetchContent_MakeAvailable(googletest)
 if(BUILD_TESTS)
   include(GoogleTest)
   enable_testing()
-  add_executable(bank_test ${CMAKE_CURRENT_SOURCE_DIR}/tests/test.cpp)
-  target_link_libraries(bank_test account transaction gtest_main gmock_main)
-  gtest_discover_tests(bank_test)
+  add_executable(bank_tests ${CMAKE_CURRENT_SOURCE_DIR}/tests/test.cpp)
+  target_link_libraries(bank_tests account transaction gtest_main gmock_main)
+  gtest_discover_tests(bank_tests)
 endif()
+
