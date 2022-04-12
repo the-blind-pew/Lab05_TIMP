@@ -46,7 +46,7 @@ jobs:
       run: sudo apt install npm
 
     - name: Test 
-      run: make test-coverage
+      run: make test
     - name: Coveralls Parallel
       uses: coverallsapp/github-action@master
       with:
