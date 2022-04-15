@@ -30,19 +30,19 @@ jobs:
          cmake --build . -t test -- ARGS=--verbose
          cd ..
       
-      - name: Coveralls
-        uses: coverallsapp/github-action@master
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-
       - name: test 
         run: | 
           cd _build
           ctest        
+          
       - name: Coverage
         run: |
           mkdir coverage 
           lcov -d . -t bank_tests -o coverage/lcov.info -b . -c --no-external
           lcov --remove coverage/lcov.info '*/gtest/*' '*/gmock/*' '*/include/*' -o coverage/lcov.info
           
-      
+      - name: Coveralls
+        uses: coverallsapp/github-action@master
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+
