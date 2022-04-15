@@ -25,7 +25,7 @@ jobs:
       
       - name: Building 
         run: |
-         cmake . -DBUILD_TESTS=ON
+         cmake . -DBUILD_TESTS=ON -DCOVERALLS=ON
          cmake --build .
          cmake --build . -t test -- ARGS=--verbose
          cd ..
