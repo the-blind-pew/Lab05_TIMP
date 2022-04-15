@@ -30,10 +30,10 @@ jobs:
          cmake --build . -t test -- ARGS=--verbose
          cd ..
       
-      - name: test 
-        run: | 
-          cd _build
-          ctest        
+      #- name: test 
+       # run: | 
+        #  cd _build
+         # ctest        
           
       - name: Coverage
         run: |
